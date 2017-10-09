@@ -59,13 +59,3 @@ Use Case
 
       # Testing
       export ANSIBLE_HOST_KEY_CHECKING=False; ansible-playbook -i hosts playbook.yml --ask-pass --ask-become-pass --tags testing
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-BSO ISL
