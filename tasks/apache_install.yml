@@ -1,0 +1,15 @@
+---
+
+#LVM installation
+# - name: lv apache
+#   include: apache_lvm.yml
+#   when: apache_use_lvm
+
+- name: Install latest Apache version
+  apt: name=apache2 update_cache=yes state=latest
+
+- include: apache_configure.yml
+  tags: [installation]
+
+- include: apache_securise.yml
+  tags: [installation]

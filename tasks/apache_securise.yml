@@ -1,0 +1,4 @@
+---
+
+- name: Upload the security configuration.
+  template: src="apache_security_conf.tpl" dest="{{ apache_security_configuration }}"

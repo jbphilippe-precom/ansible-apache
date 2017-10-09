@@ -1,0 +1,10 @@
+---
+
+# - name: Create apache LV
+#   lvol: vg={{ apache_vg_name }} lv={{ apache_lv_name }} size={{ apache_lv_size }}
+#
+# - name: Create ext4 filesystem for apache
+#   filesystem: fstype=ext4 dev=/dev/{{ apache_vg_name }}/{{ apache_lv_name }}
+#
+# - name: Create mounpoint
+#   mount: name={{ apache_datadir }} src=/dev/mapper/{{ apache_vg_name }}-{{ apache_lv_name }} fstype=ext4 state=mounted

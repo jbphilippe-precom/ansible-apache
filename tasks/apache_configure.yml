@@ -1,0 +1,22 @@
+---
+
+- name: Configure apache mpm
+  apt: name=apache2-mpm-{{ apache_mpm }} update_cache=yes state=latest
+  when: ansible_distribution_release == 'trusty'
+
+- name: Deactivate the wrong apache mpm
+  apache2_module: state=absent name=mpm_{{ item }}
+  when: apache_mpm != item
+  with_items:
+    - "{{ apache_mpm_list }}"
+
+- name: Activate the right apache mpm
+  apache2_module: state=present name=mpm_{{ apache_mpm }}
+
+- name: Configure apache modules
+  apache2_module: state=present name={{ item }}
+  with_items:
+    - "{{ apache_mod_list }}"
+
+- name: Upload the default http vhost configuration.
+  template: src="apache_http_vhost.tpl" dest="{{ apache_default_vhost }}"

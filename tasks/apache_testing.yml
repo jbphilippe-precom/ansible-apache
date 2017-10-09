@@ -1,0 +1,13 @@
+---
+
+- name: Is Apache Listenning
+  wait_for: port=80 delay=2 timeout=10
+
+# logrotate
+- stat: path=/etc/logrotate.d/apache2
+  register: apache_logrotate
+
+- name: Verify that logrotate is configured
+  assert:
+    that:
+      - apache_logrotate.stat.exists

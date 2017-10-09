@@ -1,0 +1,15 @@
+---
+# defaults file for ansible-apache
+
+#Installation variables
+# apache_use_lvm: true
+# apache_lv_size: 5g
+apache_datadir: '/var/www'
+apache_security_configuration: '/etc/apache2/conf-available/security.conf'
+apache_default_vhost: '/etc/apache2/sites-available/default.conf'
+
+apache_mpm: event
+apache_mod_list:
+  - headers
+  - ssl
+  - rewrite

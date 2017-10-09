@@ -1,0 +1,10 @@
+---
+# vars file for ansible-apache
+
+apache_vg_name: vg_vroot
+apache_lv_name: lv_www
+
+apache_mpm_list:
+  - worker
+  - prefork
+  - event
