@@ -13,3 +13,6 @@
 
 - include: apache_securise.yml
   tags: [installation]
+
+- name: Ensure Apache2 service is started
+  service: name=apache2 state=started enabled=yes
