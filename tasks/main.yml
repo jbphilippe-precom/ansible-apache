@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-apache
 
-- include: apache_install.yml
+- import_tasks: apache_install.yml
   when: ansible_distribution == 'Ubuntu' and (ansible_distribution_release == 'trusty' or ansible_distribution_release == 'xenial')
   tags: [installation]
 
@@ -9,6 +9,6 @@
 #  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'trusty'
 #  tags: [rollback]
 
-- include: apache_testing.yml
+- import_tasks: apache_testing.yml
   when: ansible_distribution == 'Ubuntu' and (ansible_distribution_release == 'trusty' or ansible_distribution_release == 'xenial')
   tags: [testing]

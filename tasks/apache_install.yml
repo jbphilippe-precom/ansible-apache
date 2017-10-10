@@ -8,10 +8,10 @@
 - name: Install latest Apache version
   apt: name=apache2 update_cache=yes state=latest
 
-- include: apache_configure.yml
+- import_tasks: apache_configure.yml
   tags: [installation]
 
-- include: apache_securise.yml
+- import_tasks: apache_securise.yml
   tags: [installation]
 
 - name: Ensure Apache2 service is started
