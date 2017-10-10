@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  author: Equipe Precom Bu-Obseques
+  author: Jean-Baptiste PHILIPPE
   description: This role installs and configure apache
-  company: Precom
+  company: Precom Obseques
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
